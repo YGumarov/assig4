@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GamesDB</title>
+    <link rel="stylesheet" href="/styles.css"> <!-- Подключение файла стилей -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="/logo.png" alt="Logo" style="width: 50px; border-radius: 20%;"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto" style="padding-left: 35px;">
+                    <% if (loggedIn) { %>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/"> <%= language === 'russian' ? 'Главная' : 'Home' %> </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/game"> <%= language === 'russian' ? 'Игры' : 'Game' %> </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/soon"> <%= language === 'russian' ? 'Новинки' : 'Out Soon' %> </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/profile"><%= username %></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/history"> <%= language === 'russian' ? 'История' : 'History' %> </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout"> <%= language === 'russian' ? 'Выйти' : 'Logout' %> </a>
+                        </li>
+                    <% } %>
+                    <% if (admin) { %>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin"> <%= language === 'russian' ? 'Админ' : 'Admin' %> </a>
+                        </li>
+                    <% } %>
+                    <% if (!loggedIn) { %>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login"> <%= language === 'russian' ? 'Войти' : 'Login' %> </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/register"> <%= language === 'russian' ? 'Зарегистрироваться' : 'Register' %> </a>
+                        </li>
+                    <% } %>
+                </ul>
+                <form id="languageForm" class="form-inline my-2 my-lg-0 language-dropdown">
+                    <select id="languageSelect" class="custom-select mr-sm-2" name="language">
+                        <option value="english" <%= language === 'english' ? 'selected' : '' %>>English</option>
+                        <option value="russian" <%= language === 'russian' ? 'selected' : '' %>>Russian</option>
+                    </select>
+                </form>
+
+            </div>
+        </div>
+    </nav>
+</header>
+<script>
+    document.getElementById('languageSelect').addEventListener('change', async () => {
+        const language = document.getElementById('languageSelect').value;
+        const response = await fetch('/language', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ language })
+        });
+
+        if (response.ok) {
+            location.reload(); // Обновляем страницу после успешного обновления языка
+        } else {
+            console.error('Failed to update language');
+        }
+    });
+</script>

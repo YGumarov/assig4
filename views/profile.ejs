@@ -1,0 +1,28 @@
+<%- include('header') %>
+<div class="center">
+    <h1><%= language === 'russian' ? 'Профиль пользователя' : 'User profile' %></h1>
+    <h3 style="color: #000000;"><%= language === 'russian' ? 'Добро пожаловать,' : 'Welcome,' %> <%= username %>!</h3>
+
+    <!-- Error message section -->
+    <% if (typeof errorMessage !== 'undefined') { %>
+        <p style="color: red;"><%= errorMessage %></p>
+    <% } %>
+    <% if (typeof successMessage !== 'undefined') { %>
+        <p style="color: green;"><%= successMessage %></p>
+    <% } %>
+
+    <!-- Форма для удаления аккаунта -->
+    <form action="/profile/delete" method="POST">
+        <button class="type2_button" type="submit"><%= language === 'russian' ? 'Удалить аккаунт' : 'Delete account' %></button>
+    </form>
+
+    <!-- Форма для изменения пароля -->
+    <form action="/profile/pass" method="POST">
+        <input type="password" name="password" placeholder="<%= language === 'russian' ? 'Старый пароль' : 'Old password' %>">
+        <input type="password" name="password2" placeholder="<%= language === 'russian' ? 'Новый пароль' : 'New password' %>">
+        <input type="password" name="password3" placeholder="<%= language === 'russian' ? 'Подтвердите новый пароль' : 'Сonfirm New Password' %>">
+        <button class="type2_button" type="submit"><%= language === 'russian' ? 'Поменять пароль' : 'Change password' %></button>
+    </form>
+</div>
+
+<%- include('footer') %>

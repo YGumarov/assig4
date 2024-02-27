@@ -1,0 +1,399 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Apply box-sizing: border-box to all elements */
+}
+
+/* Header styles */
+header {
+    background-color: #000000; /* Header background color */
+    padding: 0px 0; /* Top and bottom padding */
+    border-radius: 0 0 10px 10px;
+}
+
+.navbar-nav {
+    background-color: black;
+}
+
+.language-dropdown {
+    background-color: black;
+}
+
+/* Navigation styles */
+nav ul {
+    list-style-type: none; /* Remove default list styles */
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Center-align navigation */
+}
+
+nav ul li {
+    display: inline; /* Make list items display inline */
+    margin-right: 10px; /* Add some space between list items */
+}
+
+nav ul li a {
+    color: white; /* Link text color */
+    text-decoration: none; /* Remove underline from links */
+    padding: 10px 15px; /* Padding inside links */
+    border-radius: 5px; /* Add rounded corners */
+}
+
+nav ul li a:hover {
+    background-color: #000000; /* Background color on hover */
+}
+
+.bg-dark {
+    background-color: black;
+}
+
+/* Custom CSS for centering navigation items */
+.navbar-nav {
+    margin: 10px auto; /* Center the navbar items */
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Footer styles */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center; /* Center-align content horizontally */
+    background-color: #000000; /* Footer background color */
+    padding: 0px 0; /* Padding top and bottom */
+}
+
+.footer-text {
+    color: #ffffff; /* Footer text color */
+}
+
+/* Centered content */
+.center {
+    width: 50%; /* Set width */
+    margin: 5rem auto; /* Auto margin horizontally */
+    text-align: center; /* Center-align text */
+}
+
+.center div {
+    margin-bottom: 10px; /* Spacing between elements */
+}
+
+/* Anime cards */
+.game-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+    overflow: hidden;
+    width: 300px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}
+
+/* Form styles */
+form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.game_form {
+    flex-direction: row;
+}
+
+#game_search {
+    border-radius: 20px 0 0 20px;
+    padding: 10px;
+    width: 300px;
+    outline: none;
+}
+
+form button {
+    background-color: #333;
+    border: none;
+    border-radius: 20px 20px 20px 20px;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.type2_button {
+    border-radius: 20px 20px 20px 20px;
+    width: 100px;
+    margin: 0 auto; /* Center horizontally */
+    display: block; /* Make button a block element */
+}
+
+form button:hover {
+    background-color: #a2a2a2;
+}
+
+/* Logo styles */
+.logo {
+    display: inline-block;
+    margin-right: 20px; /* Adjust margin as needed */
+}
+
+.logo img {
+    width: 80px; /* Adjust logo width as needed */
+    vertical-align: middle;
+    border-radius: 5%;
+}
+
+/* List styles */
+ul {
+    list-style-type: none; /* Remove default list styles */
+}
+
+/* Table styles */
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user-table th, .user-table td {
+    border: 1px solid #030303; /* Table cell border */
+    padding: 8px; /* Cell padding */
+    text-align: left; /* Left-align text */
+}
+
+.user-table th {
+    background-color: #f2f2f2; /* Table header background color */
+}
+
+/* Message styles */
+.error-message {
+    color: red;
+}
+
+.success-message {
+    color: green;
+}
+
+/* Update, delete, create form styles */
+.update-form,
+.delete-form,
+.create-form {
+    margin-bottom: 10px; /* Spacing between forms */
+}
+
+/* Update, delete, create button styles */
+.update-button,
+.delete-button,
+.create-button {
+    margin-top: 10px; /* Spacing above buttons */
+}
+
+/* Header styles */
+.custom-header {
+    background-color: #000000; /* Header background color */
+    color: #fff; /* Text color */
+    padding: 15px 0; /* Padding top and bottom */
+}
+
+.custom-header .container {
+    display: flex;
+    justify-content: space-between; /* Space elements evenly */
+    align-items: center; /* Center-align items vertically */
+}
+
+.custom-header .logo img {
+    height: 40px; /* Adjust logo height as needed */
+}
+
+.custom-header nav ul {
+    list-style: none; /* Remove default list styles */
+    margin: 0;
+    padding: 0;
+}
+
+.custom-header nav ul li {
+    display: inline-block; /* Make list items display inline */
+    margin-right: 20px; /* Spacing between list items */
+}
+
+.custom-header nav ul li:last-child {
+    margin-right: 0; /* Remove right margin from last list item */
+}
+
+.custom-header nav ul li a {
+    color: #fff; /* Link text color */
+    text-decoration: none; /* Remove underline from links */
+    font-size: 16px; /* Font size */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.custom-header nav ul li a:hover {
+    color: #ffd700; /* Change color on hover */
+}
+
+/* Body styles */
+body {
+    background-image: url('background.jpg'); /* Background image */
+    background-size: cover; /* Cover background */
+    background-position: center; /* Center background image */
+    background-repeat: no-repeat; /* No repeat */
+}
+
+/* About section styles */
+.about-title {
+    color: #ffffff; /* Text color */
+}
+
+.about-content {
+    color: #ffffff; /* Text color */
+}
+
+/* Admin page styles */
+.admin-page {
+    background-color: #fff; /* Background color */
+}
+
+/* Profile text styles */
+.profile-text {
+    color: white; /* Text color */
+}
+
+/* Login text styles */
+.log-text {
+    color: white; /* Text color */
+}
+
+/* Register text styles */
+.reg-text {
+    color: white; /* Text color */
+}
+
+
+
+
+
+
+
+/* Prefixing with .soon-page to make the styling unique */
+.soon-page .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.soon-page .games-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.soon-page .game {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.soon-page .game h2 {
+    margin-top: 0;
+}
+
+.soon-page .game p {
+    margin: 5px 0;
+}
+
+.soon-page .game p strong {
+    font-weight: bold;
+}
+
+/* Optional: Add styles for header and footer */
+.soon-page header,
+.soon-page footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.soon-page footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+
+/* history.css */
+
+.history-column {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.history-item {
+    border: 2px solid #000000;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.history-item p {
+    margin: 0;
+}
+
+.history-item p:first-child {
+    margin-bottom: 10px;
+}
+
+.history-item p strong {
+    font-weight: bold;
+    color: #030303;
+}
+
+/* Media Query for responsiveness */
+@media (max-width: 768px) {
+    .history-column-gpt {
+        padding: 15px;
+    }
+}
+
+
+.buton {
+    background-color: black;
+}
+
+.carousel-item img {
+    height: 450px; /* Adjust the height as needed */
+    image-resolution: normal;
+}

@@ -1,0 +1,23 @@
+<%- include('header') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="history-column">
+                <h2 class="mb-4"><%= language === 'russian' ? 'История Поиска Игр' : 'Game Search History' %></h2>
+                <% if (userGame.length > 0) { %>
+                    <% userGame.forEach(game => { %>
+                        <div class="history-item">
+                            <p><strong><%= language === 'russian' ? 'Поиск' : 'Search' %>:</strong> <%= game.search %></p>
+                            <p><strong><%= language === 'russian' ? 'Создан в' : 'Created at' %>:</strong> <%= new Date(game.createdAt).toLocaleString() %></p>
+                        </div>
+                    <% }) %>
+                <% } else { %>
+                    <p>No search results for game</p>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('footer') %>

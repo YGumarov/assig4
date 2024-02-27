@@ -1,0 +1,16 @@
+<%- include('header') %>
+<div class="container soon-page">
+    <div class="container">
+        <h1><%= language === 'russian' ? 'Скоро выйдут' : 'Upcoming New Games' %></h1>
+        <div class="games-list">
+            <% games.forEach(game => { %>
+                <div class="game">
+                    <h2><%= game.title %></h2>
+                    <p><strong><%= language === 'russian' ? 'Дата выхода' : 'Release date' %>:</strong> <%= game.date %></p>
+                    <p><strong><%= language === 'russian' ? 'Платформа' : 'Platform' %>:</strong> <%= game.platform %></p>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+</div>
+<%- include('footer') %>
